@@ -1,0 +1,25 @@
+<html lang="en">
+<?= $loadTemplate("public/components/head_data.php", ["title" => "BeFinanced - Aplicatia ta de creditare"]); ?>
+
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-align="center" data-mobile-nav-style="minimal"
+      data-mobile-nav-scheme="gray" data-mobile-header-scheme="gray" data-mobile-nav-breakpoint="1199">
+
+<div id="wrap">
+
+    <?=$loadTemplate("public/components/header.php")?>
+
+    <main id="content" class="content">
+
+        <?=$loadTemplate("public/components/landing-page/presentation-banner.php")?>
+
+    </main><!-- /#content.content -->
+
+    <?=$loadTemplate("public/components/footer.php")?>
+
+</div><!-- /#wrap -->
+
+
+<?= $loadTemplate('public/components/scripts.php') ?>
+
+</body>
+</html>
