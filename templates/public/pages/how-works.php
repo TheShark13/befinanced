@@ -121,6 +121,10 @@
                         <p>View-urile sunt tinute in fisiere, denumite "templates", pentru o mai buna organizare a
                             partii vizuale
                             si pentru a putea refolosi componentele intr-un mod mult mai facil.</p>
+                        <p>Rolurile identificate, pana acum, sunt: Client (utilizatorul care doreste sa obtina un
+                            credit), Operator bancar (utilizatorul care proceseaza activitatea bancii, pe partea de
+                            aplicatii de credite), Administrator platforma (utilizatorul care are acces la intreaga
+                            platforma, vizualizand toate datele inregistrate, cat si administrarea activitatii)</p>
                     </header>
 
                     <a target="_blank" href="<?= $getFileSrc("img/eer_diagram.svg") ?>">
