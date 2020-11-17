@@ -23,21 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/RunnableResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/RunnableResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/components/head_data.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/components/head_data.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/components/sidemenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/components/sidemenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/application.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/applications.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/components/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +110,7 @@
       <updated>1604163930079</updated>
       <workItem from="1604163931565" duration="27389000" />
       <workItem from="1604395778951" duration="13776000" />
-      <workItem from="1605556159608" duration="30225000" />
+      <workItem from="1605556159608" duration="30383000" />
     </task>
     <servers />
   </component>
