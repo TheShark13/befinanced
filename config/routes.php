@@ -53,4 +53,16 @@ $routes = [
         'method' => ["GET"],
         'function' => "logout"
     ],
+    [
+        'path' => '/dashboard/apply-credit',
+        'controller' => DashboardController::class,
+        'method' => ["GET"],
+        'function' => "applyCredit"
+    ],
+    [
+        'path' => '/dashboard/register-application',
+        'controller' => DashboardController::class,
+        'method' => ["POST"],
+        'function' => "registerApplication"
+    ],
 ];

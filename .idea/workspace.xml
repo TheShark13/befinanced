@@ -23,7 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CreditTypeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CreditApplicationBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CreditApplicationFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CreditApplicationService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/pages/credit_type.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Database/DatabaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Database/DatabaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FinancialInstitution.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FinancialInstitution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FinancialInstitutionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FinancialInstitutionRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/components/head_data.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/components/head_data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/application.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/dashboard.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +96,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/dashboard/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -93,11 +107,11 @@
       <recent name="D:\Learn\University\DAW\Projects\befinanced\templates\public\pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Service" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\templates\dashboard\pages" />
+      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Repository" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\framework\src\ChristianFramework\HttpModule\Exception" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Entity" />
-      <recent name="E:\Learn\University\DAW\Projects\befinanced\framework\src\MySqlCommunicator\Database" />
-      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Repository" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,7 +124,7 @@
       <updated>1604163930079</updated>
       <workItem from="1604163931565" duration="27389000" />
       <workItem from="1604395778951" duration="13776000" />
-      <workItem from="1605556159608" duration="30383000" />
+      <workItem from="1605556159608" duration="35680000" />
     </task>
     <servers />
   </component>
@@ -130,19 +144,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1605643732019">
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1605649797217">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605643732019" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605646798022">
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605649797217" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605650748679">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605646798022" />
-    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605646777801">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605650748679" />
+    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605650204408">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604508177645" />
-    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605646777801" />
+    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605650204408" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1605644156283">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

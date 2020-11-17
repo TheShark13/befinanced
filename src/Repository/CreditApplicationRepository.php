@@ -57,6 +57,51 @@ class CreditApplicationRepository
         return $query;
     }
 
+    /**
+     * @param CreditApplication $creditApplication
+     * @param int[] $financialInstitutionsIds
+     * @return CreditApplication
+     */
+    public function persist(CreditApplication $creditApplication, array $financialInstitutionsIds): CreditApplication
+    {
+        $conn = $this->dbRepo->getConnection();
+
+        $sql = 'INSERT INTO credit_application_informations (amount_money_requested, repayment_period_requested, message, created, updated) VALUES(:money, :months, :message, :created, :updated)';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':money', $creditApplication->getCreditApplicationInformations()->getAmountMoneyRequested());
+        $stmt->bindValue(':months', $creditApplication->getCreditApplicationInformations()->getRepaymentPeriodRequested());
+        $stmt->bindValue(':message', $creditApplication->getCreditApplicationInformations()->getMessage());
+        $stmt->bindValue(':updated', $creditApplication->getCreditApplicationInformations()->getUpdated()->format('Y-m-d H:i:s'));
+        $stmt->bindValue(':created', $creditApplication->getCreditApplicationInformations()->getCreated()->format('Y-m-d H:i:s'));
+        $stmt->execute();
+
+        $creditApplication->getCreditApplicationInformations()->setId($conn->lastInsertId());
+
+        $sql = 'INSERT INTO credit_application (credit_application_informations_id, credit_type_id, status, applicant_id, created, updated) VALUES(:credit_application_informations_id, :credit_type_id, :status, :applicant_id, :created, :updated)';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':credit_application_informations_id', $creditApplication->getCreditApplicationInformations()->getId());
+        $stmt->bindValue(':credit_type_id', $creditApplication->getCreditType()->getId());
+        $stmt->bindValue(':status', $creditApplication->getStatus());
+        $stmt->bindValue(':applicant_id', $creditApplication->getApplicant()->getId());
+        $stmt->bindValue(':created', $creditApplication->getCreated()->format('Y-m-d H:i:s'));
+        $stmt->bindValue(':updated', $creditApplication->getUpdated()->format('Y-m-d H:i:s'));
+        $stmt->execute();
+        $creditApplication->setId($conn->lastInsertId());
+
+        $sql = 'INSERT INTO credit_application_financial_institution(credit_application_id, financial_institution_id) VALUES ';
+        $pairs = [];
+        for ($i = 0; $i < count($financialInstitutionsIds); ++$i) {
+            $sql .= '(?, ?), ';
+            $pairs[] = $creditApplication->getId();
+            $pairs[] = intval($financialInstitutionsIds[$i]);
+        }
+        $sql = rtrim($sql, ', ');
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($pairs);
+
+        return $creditApplication;
+    }
+
     //TODO: De refacut partea de ORM
 //    public function findOneById(int $id): User
 //    {

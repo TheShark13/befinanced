@@ -16,6 +16,7 @@ class FinancialInstitution extends BaseEntity
     protected int $type;
     protected Address $address;
     protected ?FinancialInstitutionLegalInformations $financialInstitutionLegalInformations;
+    protected string $logo;
 
     /**
      * @return string
@@ -86,6 +87,24 @@ class FinancialInstitution extends BaseEntity
     public function setFinancialInstitutionLegalInformations(?FinancialInstitutionLegalInformations $financialInstitutionLegalInformations): FinancialInstitution
     {
         $this->financialInstitutionLegalInformations = $financialInstitutionLegalInformations;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogo(): string
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param string $logo
+     * @return FinancialInstitution
+     */
+    public function setLogo(string $logo): FinancialInstitution
+    {
+        $this->logo = $logo;
         return $this;
     }
 

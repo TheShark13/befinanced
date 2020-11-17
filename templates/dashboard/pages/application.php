@@ -66,9 +66,16 @@ use App\Entity\FinancialInstitution;
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= $financialInstitution->getName() ?></h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <img src="<?=$financialInstitution->getLogo()?>"
+                                         height="150px"  />
+                                </div>
+                                <div class="col-md-12">
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                                </div>
+                            </div>
                         </div>
                         <div class="card-footer text-muted">
                             2 days ago

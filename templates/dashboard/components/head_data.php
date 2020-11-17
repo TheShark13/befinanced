@@ -50,7 +50,7 @@
     </ul>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid mb-5">
     <div class="row">
         <?= $loadTemplate("dashboard/components/sidemenu.php") ?>
 

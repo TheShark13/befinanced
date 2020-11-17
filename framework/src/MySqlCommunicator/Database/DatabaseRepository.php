@@ -83,6 +83,9 @@ class DatabaseRepository
         return $select;
     }
 
+    public function insert(string $tableName, array $params) {
+
+    }
 
     protected function getQueryResult(PDOStatement $sth)
     {

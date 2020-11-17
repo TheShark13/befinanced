@@ -21,6 +21,16 @@ class FinancialInstitutionRepository
     }
 
     /**
+     * @return FinancialInstitution[]
+     */
+    public function findAll(): array
+    {
+        $query = $this->getQueryForFinancialInstitutions();
+
+        return $this->dbRepo->fetchEntities($query, [], $this->mapProps);
+    }
+
+    /**
      * @param int $applicationId
      * @return FinancialInstitution[]
      */
