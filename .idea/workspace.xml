@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,18 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/Service/MailerService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/befinanced.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/befinanced.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/File/LandingPageCssFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/File/LandingPageCssFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/File/LandingPageJsFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/File/LandingPageJsFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Mapper/EntityMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Mapper/EntityMapper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/UserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CreditApplicationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/dashboard.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/Exception" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -101,11 +100,11 @@
       <recent name="D:\Learn\University\DAW\Projects\befinanced\templates\public\pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learn\University\DAW\Projects\befinanced\framework\src\ChristianFramework\HttpModule\Exception" />
+      <recent name="E:\Learn\University\DAW\Projects\befinanced\templates\dashboard\pages" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Entity" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\framework\src\MySqlCommunicator\Database" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Repository" />
-      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Controller" />
-      <recent name="D:\Learn\University\DAW\Projects\befinanced\public\img" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -118,7 +117,7 @@
       <updated>1604163930079</updated>
       <workItem from="1604163931565" duration="27389000" />
       <workItem from="1604395778951" duration="13776000" />
-      <workItem from="1605556159608" duration="22573000" />
+      <workItem from="1605556159608" duration="25841000" />
     </task>
     <servers />
   </component>
@@ -138,19 +137,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1605640439347">
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1605643732019">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605640439347" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605637382756">
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605643732019" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605643162674">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605637382756" />
-    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605634649361">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605643162674" />
+    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605643139068">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604508177645" />
-    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605634649361" />
+    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605643139068" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1605634255567">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -168,5 +167,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605633486596" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1605642179470">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605642179470" />
   </component>
 </project>

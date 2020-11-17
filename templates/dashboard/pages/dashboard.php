@@ -32,7 +32,7 @@ use App\Entity\CreditApplication;
                     <td><?= $application->getCreated()->format('d/m/Y') ?></td>
                     <td><?= CreditApplication::STATUSES_LABELS[$application->getStatus()] ?></td>
                     <td>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                        <a href="/dashboard/applications/show?id=<?=$application->getId()?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                         <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>

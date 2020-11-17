@@ -51,7 +51,7 @@ class EntityMapper
     {
         $propType = $property->getType()->getName();
 
-        if(isset($this->entityPrefixMap[$propType])) {
+        if(isset($this->entityPrefixMap[$propType]) && isset($this->data[$this->entityPrefixMap[$propType].'_id'])) {
             $value = $this->getEntity($propType);
         }
         elseif (isset($this->data[$keyName])) {

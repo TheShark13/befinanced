@@ -33,5 +33,11 @@ $routes = [
         'controller' => DashboardController::class,
         'method' => "GET",
         'function' => "applications"
+    ],
+    [
+        'path' => '/dashboard/applications/show',
+        'controller' => DashboardController::class,
+        'method' => "GET",
+        'function' => "showApplication"
     ]
 ];
