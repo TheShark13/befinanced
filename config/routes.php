@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\DashboardController;
 use App\Controller\HomeController;
 
 $routes = [
@@ -14,5 +15,23 @@ $routes = [
         'controller' => HomeController::class,
         'method' => "GET",
         'function' => "howWorks"
+    ],
+    [
+        'path' => '/test',
+        'controller' => HomeController::class,
+        'method' => "GET",
+        'function' => "test"
+    ],
+    [
+        'path' => '/dashboard',
+        'controller' => DashboardController::class,
+        'method' => "GET",
+        'function' => "index"
+    ],
+    [
+        'path' => '/dashboard/applications',
+        'controller' => DashboardController::class,
+        'method' => "GET",
+        'function' => "applications"
     ]
 ];

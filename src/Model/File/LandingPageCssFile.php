@@ -14,7 +14,7 @@ use Storage\Entity\CssFile;
  */
 class LandingPageCssFile extends CssFile
 {
-    protected const LANDING_PAGE_STORAGE = "landing-page/";
+    protected const LANDING_PAGE_STORAGE = "/landing-page/";
 
     /**
      * @return string

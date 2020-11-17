@@ -4,9 +4,11 @@
 namespace App\Controller;
 
 
+use App\Repository\UserRepository;
 use ChristianFramework\Controller\AbstractController;
 use ChristianFramework\HttpModule\Request;
 use ChristianFramework\HttpModule\Response;
+use ChristianFramework\Service\MailerService;
 
 /**
  * Class HomeController
@@ -16,6 +18,8 @@ class HomeController extends AbstractController
 {
     public function home(Request $request): Response
     {
+        $mailerService = new MailerService();
+        $mailerService->sendEmail("vsl.silviu@yahoo.com", "test", "hello");
         return $this->runTemplate("public/pages/homepage.phtml", [
             'name' => "Cristi"
         ]);
@@ -26,5 +30,13 @@ class HomeController extends AbstractController
         return $this->runTemplate("public/pages/how-works.php", [
             'name' => "Cristi"
         ]);
+    }
+
+    public function test(Request $request): Response
+    {
+        $dbRepo = new UserRepository();
+
+        dump($dbRepo->findOneById(1));
+        exit;
     }
 }

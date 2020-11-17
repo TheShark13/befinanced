@@ -14,7 +14,7 @@ use Storage\Entity\JsFile;
  */
 class LandingPageJsFile extends JsFile
 {
-    protected const LANDING_PAGE_STORAGE = "landing-page/";
+    protected const LANDING_PAGE_STORAGE = "/landing-page/";
 
     /**
      * @return string
