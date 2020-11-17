@@ -19,7 +19,8 @@ use App\Entity\FinancialInstitution;
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Ai aplicat la un numar de institutii financiare</h5>
+                                <h5 class="card-title">Ai aplicat la un numar de <?= count($financialInstitutions) ?>
+                                    institutii financiare</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
                                 <a href="#" class="btn btn-primary">Go somewhere</a>

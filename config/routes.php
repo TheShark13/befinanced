@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\AuthController;
 use App\Controller\DashboardController;
 use App\Controller\HomeController;
 
@@ -39,5 +40,17 @@ $routes = [
         'controller' => DashboardController::class,
         'method' => "GET",
         'function' => "showApplication"
-    ]
+    ],
+    [
+        'path' => '/login',
+        'controller' => AuthController::class,
+        'method' => ["GET", "POST"],
+        'function' => "login"
+    ],
+    [
+        'path' => '/logout',
+        'controller' => AuthController::class,
+        'method' => ["GET"],
+        'function' => "logout"
+    ],
 ];

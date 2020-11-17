@@ -6,6 +6,8 @@ use ChristianFramework\Kernel\Kernel;
 
 require dirname(__DIR__) . '/config/bootstrap.php';
 
+session_start();
+
 $request = Request::createFromGlobals();
 
 $kernel = new Kernel($request);

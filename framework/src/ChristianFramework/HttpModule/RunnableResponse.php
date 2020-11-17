@@ -62,6 +62,9 @@ class RunnableResponse extends Response
             "getFileSrc" => function (string $fileSrc) {
                 return "/$fileSrc";
             },
+            "getUser" => function () {
+                return $_SESSION['user'] ?? null;
+            },
         ];
     }
 }

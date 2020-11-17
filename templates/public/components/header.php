@@ -10,13 +10,14 @@
                         <div class="navbar-header">
                             <a class="navbar-brand" href="/" rel="home">
 										<span class="navbar-brand-inner">
-											<img class="logo-dark" src="<?=$getFileSrc("img/logo-white.png")?>"
+											<img class="logo-dark" src="<?= $getFileSrc("img/logo-white.png") ?>"
                                                  alt="Ave HTML Template">
-											<img class="logo-sticky" src="<?=$getFileSrc("img/logo-black.png")?>"
+											<img class="logo-sticky" src="<?= $getFileSrc("img/logo-black.png") ?>"
                                                  alt="Ave HTML Template">
-											<img class="mobile-logo-default" src="<?=$getFileSrc("img/logo-black.png")?>"
+											<img class="mobile-logo-default"
+                                                 src="<?= $getFileSrc("img/logo-black.png") ?>"
                                                  alt="Ave HTML Template">
-											<img class="logo-default" src="<?=$getFileSrc("img/logo-white.png")?>"
+											<img class="logo-default" src="<?= $getFileSrc("img/logo-white.png") ?>"
                                                  alt="Ave HTML Template">
 										</span>
                             </a>
@@ -59,10 +60,10 @@
                         </div><!-- /#main-header-collapse -->
 
                         <div class="header-module">
-                            <a href="#" target="_blank"
+                            <a href="/login"
                                class="btn btn-solid text-uppercase btn-sm round border-thin btn-white font-size-12 text-uppercase ltr-sp-15 px-2">
 										<span>
-											<span class="btn-txt">Join Us</span>
+											<span class="btn-txt">Intra in cont</span>
 										</span>
                             </a>
                         </div><!-- /.header-module -->

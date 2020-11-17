@@ -25,8 +25,8 @@ class DashboardController extends AbstractController
     public function applications(Request $request): Response
     {
         $creditApplicationRepo = new CreditApplicationRepository();
-        $applications = $creditApplicationRepo->findApplicationsForUser(1);
-        return $this->runTemplate("dashboard/pages/dashboard.php", [
+        $applications = $creditApplicationRepo->findApplicationsForUser($_SESSION['user']->getId());
+        return $this->runTemplate("dashboard/pages/applications.php", [
             'applications' => $applications
         ]);
     }

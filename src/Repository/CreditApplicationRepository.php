@@ -4,18 +4,13 @@
 namespace App\Repository;
 
 
-use App\Entity\Address;
 use App\Entity\CreditApplication;
 use App\Entity\CreditApplicationInformations;
 use App\Entity\CreditType;
-use App\Entity\FinancialInstitution;
-use App\Entity\FinancialInstitutionLegalInformations;
 use App\Entity\User;
 use App\Entity\UserProfile;
 use App\Entity\UserRole;
-use MySqlCommunicator\Database\DatabaseConnection;
 use MySqlCommunicator\Database\DatabaseRepository;
-use MySqlCommunicator\Helper\ReflectionHelper;
 
 class CreditApplicationRepository
 {

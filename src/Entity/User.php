@@ -22,7 +22,7 @@ class User extends BaseEntity implements UserModel
     /**
      * @var UserRole
      */
-    protected ?UserRole $role;
+    protected UserRole $role;
 
     /**
      * @var UserProfile|null

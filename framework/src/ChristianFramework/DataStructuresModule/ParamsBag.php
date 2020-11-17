@@ -60,7 +60,7 @@ class ParamsBag implements IteratorAggregate, Countable
      */
     public function set(string $key, $value): void
     {
-        $this->parameters[$key] = $value;
+        $this->parameters[$key] = htmlspecialchars($value);
     }
 
     /**

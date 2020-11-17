@@ -78,6 +78,12 @@ class Router
         $controller = $currentRoute['controller'];
         $method = $currentRoute['function'];
 
+        if (is_array($currentRoute['method'])) {
+            if (in_array($this->request->getServerParams()->get("REQUEST_METHOD"), $currentRoute['method'])) {
+                $currentRoute['method'] = $this->request->getServerParams()->get("REQUEST_METHOD");
+            }
+        }
+
         if (!in_array(strtoupper($currentRoute['method']), self::$supportedHttpMethods)) {
             $this->invalidMethodHandler();
         }
