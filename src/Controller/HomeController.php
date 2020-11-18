@@ -8,7 +8,6 @@ use App\Repository\UserRepository;
 use ChristianFramework\Controller\AbstractController;
 use ChristianFramework\HttpModule\Request;
 use ChristianFramework\HttpModule\Response;
-use ChristianFramework\Service\MailerService;
 
 /**
  * Class HomeController

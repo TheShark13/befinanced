@@ -24,9 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Database/DatabaseConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/MySqlCommunicator/Database/DatabaseConnection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/components/sidemenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/components/sidemenu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/dashboard/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
@@ -96,8 +98,8 @@
       <recent name="D:\Learn\University\DAW\Projects\befinanced\templates\public\pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Service" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\templates\dashboard\pages" />
+      <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Service" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Repository" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\framework\src\ChristianFramework\HttpModule\Exception" />
       <recent name="E:\Learn\University\DAW\Projects\befinanced\src\Entity" />
@@ -113,7 +115,7 @@
       <updated>1604163930079</updated>
       <workItem from="1604163931565" duration="27389000" />
       <workItem from="1604395778951" duration="13776000" />
-      <workItem from="1605556159608" duration="37570000" />
+      <workItem from="1605556159608" duration="40185000" />
     </task>
     <servers />
   </component>

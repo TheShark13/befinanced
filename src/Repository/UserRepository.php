@@ -19,6 +19,35 @@ class UserRepository
         $this->dbRepo = new DatabaseRepository(User::class);
     }
 
+    /**
+     * @return User[]
+     */
+    public function findAll(): array
+    {
+        $query = $this->getQueryForUsers();
+
+        return $this->dbRepo->fetchEntities($query, [], $this->mapProps);
+    }
+
+    public function deleteUser(User $user): void
+    {
+        $conn = $this->dbRepo->getConnection();
+
+        if($user->getUserProfile()) {
+            $sql = 'DELETE FROM user_profile WHERE id = :id;';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindValue(':id', $user->getUserProfile()->getId());
+            $stmt->execute();
+        }
+
+        $sql = 'DELETE FROM user WHERE id = :id;';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $user->getId());
+        $stmt->execute();
+
+        unset($user);
+    }
+
     public function findUserByEmail(string $email): ?User
     {
         $query = $this->getQueryForUsers();
@@ -26,6 +55,16 @@ class UserRepository
         $query .= 'LIMIT 1';
 
         $result = $this->dbRepo->fetchEntities($query, [':email' => $email], $this->mapProps);
+        return $result[0] ?? null;
+    }
+
+    public function findUserById(int $id): ?User
+    {
+        $query = $this->getQueryForUsers();
+        $query .= ' WHERE ' . $this->mapProps[User::class] . '.id = :id ';
+        $query .= 'LIMIT 1';
+
+        $result = $this->dbRepo->fetchEntities($query, [':id' => $id], $this->mapProps);
         return $result[0] ?? null;
     }
 

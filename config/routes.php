@@ -65,4 +65,16 @@ $routes = [
         'method' => ["POST"],
         'function' => "registerApplication"
     ],
+    [
+        'path' => '/dashboard/users',
+        'controller' => DashboardController::class,
+        'method' => ["GET"],
+        'function' => "users"
+    ],
+    [
+        'path' => '/dashboard/users/delete',
+        'controller' => DashboardController::class,
+        'method' => ["GET"],
+        'function' => "deleteUser"
+    ],
 ];

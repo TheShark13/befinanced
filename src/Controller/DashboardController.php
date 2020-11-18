@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Repository\CreditApplicationRepository;
 use App\Repository\CreditTypeRepository;
 use App\Repository\FinancialInstitutionRepository;
+use App\Repository\UserRepository;
 use App\Service\CreditApplicationService;
 use ChristianFramework\Controller\AbstractController;
 use ChristianFramework\HttpModule\Exception\RouteNotFoundException;
@@ -22,6 +23,41 @@ class DashboardController extends AbstractController
     public function index(Request $request): Response
     {
         return $this->runTemplate("dashboard/pages/dashboard.php");
+    }
+
+    public function users(Request $request): Response
+    {
+        $usersRepo = new UserRepository();
+        $users = $usersRepo->findAll();
+        $creditApplicationRepo = new CreditApplicationRepository();
+        $usersApplicationsMap = [];
+        foreach ($users as $user) {
+            $applications = $creditApplicationRepo->findApplicationsForUser($user->getId());
+            $usersApplicationsMap[$user->getId()] = $applications;
+        }
+        return $this->runTemplate("dashboard/pages/users.php", [
+            'users' => $users,
+            'usersApplicationsMap' => $usersApplicationsMap
+        ]);
+    }
+
+    public function deleteUser(Request $request): Response
+    {
+        $usersRepo = new UserRepository();
+
+        $user = $usersRepo->findUserById(intval($request->get('id')));
+        if ($user) {
+            $creditApplicationRepo = new CreditApplicationRepository();
+            if (count($creditApplicationRepo->findApplicationsForUser($user->getId()))) {
+                throw new \Exception("Nu putem sterge un utilizator cu aplicari inregistrate");
+            }
+            $usersRepo->deleteUser($user);
+        } else {
+            return new Response("Userul nu a fost gasit");
+        }
+
+        header("Location: /dashboard/users");
+        die;
     }
 
     public function applications(Request $request): Response

@@ -13,6 +13,12 @@
                     Aplicarile mele
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/users">
+                    <span data-feather="home"></span>
+                    Utilizatori platforma
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
