@@ -8,7 +8,7 @@ use DateTime;
 
 abstract class BaseEntity
 {
-    protected int $id;
+    protected int $id = 0;
 
     protected ?DateTime $created;
 

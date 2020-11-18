@@ -27,7 +27,7 @@ class User extends BaseEntity implements UserModel
     /**
      * @var UserProfile|null
      */
-    protected ?UserProfile $userProfile;
+    protected ?UserProfile $userProfile = null;
 
     /**
      * @inheritDoc

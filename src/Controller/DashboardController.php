@@ -4,6 +4,8 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
+use App\Entity\UserProfile;
 use App\Repository\CreditApplicationRepository;
 use App\Repository\CreditTypeRepository;
 use App\Repository\FinancialInstitutionRepository;
@@ -38,6 +40,58 @@ class DashboardController extends AbstractController
         return $this->runTemplate("dashboard/pages/users.php", [
             'users' => $users,
             'usersApplicationsMap' => $usersApplicationsMap
+        ]);
+    }
+
+    public function userForm(Request $request): Response
+    {
+        $userRepo = new UserRepository();
+        if ($request->get('id')) {
+            $user = $userRepo->findUserById($request->get('id'));
+        } else {
+            $user = new User();
+        }
+        if ("POST" === $request->getServerParams()->get('REQUEST_METHOD')) {
+            if ($request->get('password') && strlen($request->get('password'))) {
+                $user->setPassword($user->hashPassword($request->get('password')));
+            }
+            if ($request->get('email') && strlen($request->get('email'))) {
+                $user->setEmail($request->get('email'));
+            }
+            if ($request->get('role') && strlen($request->get('role'))) {
+                $role = $userRepo->findRoleById($request->get('role'));
+                $user->setRole($role);
+            }
+            if (!$user->getUserProfile()) {
+                $user->setUserProfile(new UserProfile());
+                $user->getUserProfile()->setCreated(new \DateTime());
+                $user->getUserProfile()->setUpdated(new \DateTime());
+            }
+            if ($request->get('first_name') && strlen($request->get('first_name'))) {
+                $user->getUserProfile()->setFirstName($request->get('first_name'));
+            }
+            if ($request->get('last_name') && strlen($request->get('last_name'))) {
+                $user->getUserProfile()->setLastName($request->get('last_name'));
+            }
+            if ($request->get('phone') && strlen($request->get('phone'))) {
+                $user->getUserProfile()->setPhoneNumber($request->get('phone'));
+            }
+            if ($request->get('nin') && strlen($request->get('nin'))) {
+                $user->getUserProfile()->setNin($request->get('nin'));
+            }
+            if($user->getId()) {
+                $userRepo->update($user);
+            } else {
+                $userRepo->insert($user);
+            }
+
+            header("Location: /dashboard/users");
+            die;
+        }
+
+        return $this->runTemplate("dashboard/pages/user_form.php", [
+            'user' => $user,
+            'userRoles' => $userRepo->findAllRoles()
         ]);
     }
 

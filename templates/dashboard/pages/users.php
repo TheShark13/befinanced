@@ -7,6 +7,7 @@ use App\Entity\CreditApplication;
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Utilizatorii platformei</h1>
+    <a href="/dashboard/users/form" class="btn btn-xs btn-primary">Adauga</a>
 </div>
 <div class="row">
     <div class="col-md-12">
@@ -32,7 +33,7 @@ use App\Entity\CreditApplication;
                     <th scope="row"><?= $userCreditApplicationNo ?> aplicatii</th>
                     <td><?= $user->getCreated()->format('d/m/Y') ?></td>
                     <td>
-                        <a href="/dashboard/users/show?id=<?= $user->getId() ?>" class="btn btn-primary btn-sm"><i
+                        <a href="/dashboard/users/form?id=<?= $user->getId() ?>" class="btn btn-primary btn-sm"><i
                                     class="fa fa-eye"></i></a>
                         <?php if (!$userCreditApplicationNo) { ?>
                             <a href="/dashboard/users/delete?id=<?= $user->getId() ?>" class="btn btn-danger btn-sm"><i

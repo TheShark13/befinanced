@@ -77,4 +77,10 @@ $routes = [
         'method' => ["GET"],
         'function' => "deleteUser"
     ],
+    [
+        'path' => '/dashboard/users/form',
+        'controller' => DashboardController::class,
+        'method' => ["GET", "POST"],
+        'function' => "userForm"
+    ],
 ];

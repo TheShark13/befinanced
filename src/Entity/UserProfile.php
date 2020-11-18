@@ -20,6 +20,16 @@ class UserProfile extends BaseEntity
     protected string $lastName;
 
     /**
+     * @var string
+     */
+    protected string $phoneNumber;
+
+    /**
+     * @var string
+     */
+    protected string $nin;
+
+    /**
      * @return string
      */
     public function getFirstName(): string
@@ -55,6 +65,41 @@ class UserProfile extends BaseEntity
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getPhoneNumber(): string
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * @param string $phoneNumber
+     * @return UserProfile
+     */
+    public function setPhoneNumber(string $phoneNumber): UserProfile
+    {
+        $this->phoneNumber = $phoneNumber;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNin(): string
+    {
+        return $this->nin;
+    }
+
+    /**
+     * @param string $nin
+     * @return UserProfile
+     */
+    public function setNin(string $nin): UserProfile
+    {
+        $this->nin = $nin;
+        return $this;
+    }
 
 
 }
