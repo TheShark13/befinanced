@@ -18,8 +18,6 @@ class HomeController extends AbstractController
 {
     public function home(Request $request): Response
     {
-        $mailerService = new MailerService();
-        $mailerService->sendEmail("vsl.silviu@yahoo.com", "test", "hello");
         return $this->runTemplate("public/pages/homepage.phtml", [
             'name' => "Cristi"
         ]);
