@@ -83,4 +83,10 @@ $routes = [
         'method' => ["GET", "POST"],
         'function' => "userForm"
     ],
+    [
+        'path' => '/dashboard/applications/pdf',
+        'controller' => DashboardController::class,
+        'method' => ["GET", "POST"],
+        'function' => "pdfApplications"
+    ],
 ];

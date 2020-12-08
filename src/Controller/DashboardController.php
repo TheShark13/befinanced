@@ -11,10 +11,12 @@ use App\Repository\CreditTypeRepository;
 use App\Repository\FinancialInstitutionRepository;
 use App\Repository\UserRepository;
 use App\Service\CreditApplicationService;
+use App\Service\PdfMaker;
 use ChristianFramework\Controller\AbstractController;
 use ChristianFramework\HttpModule\Exception\RouteNotFoundException;
 use ChristianFramework\HttpModule\Request;
 use ChristianFramework\HttpModule\Response;
+use MySqlCommunicator\Database\DatabaseConnection;
 
 /**
  * Class DashboardController
@@ -79,7 +81,7 @@ class DashboardController extends AbstractController
             if ($request->get('nin') && strlen($request->get('nin'))) {
                 $user->getUserProfile()->setNin($request->get('nin'));
             }
-            if($user->getId()) {
+            if ($user->getId()) {
                 $userRepo->update($user);
             } else {
                 $userRepo->insert($user);
@@ -187,5 +189,24 @@ class DashboardController extends AbstractController
 
         header("Location: /dashboard/applications");
         die;
+    }
+
+    public function pdfApplications(Request $request)
+    {
+        $creditApplicationRepo = new CreditApplicationRepository();
+        $applications = $creditApplicationRepo->findApplicationsForUser($_SESSION['user']->getId());
+
+        $sql = 'SELECT * FROM address';
+
+        $dbConn = DatabaseConnection::getConnection();
+        $stmt = $dbConn->prepare('SELECT * FROM address');
+        $stmt->execute();
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        $pdf = new PdfMaker();
+        $pdf->SetFont('Arial', '', 14);
+        $pdf->AddPage();
+        $pdf->getTableDynamic($result);
+        $pdf->Output();
     }
 }

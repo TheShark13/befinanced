@@ -49,7 +49,7 @@ class ParamsBag implements IteratorAggregate, Countable
      */
     public function get(string $key)
     {
-        return isset($this->parameters[$key]) ? $this->parameters[$key] : null;
+        return isset($this->parameters[$key]) ? htmlspecialchars($this->parameters[$key]) : null;
     }
 
     /**

@@ -23,14 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/befinanced.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/befinanced.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/BaseEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BaseEntity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/UserProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/UserProfile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +78,7 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/fpdf/fpdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jeUDHaATycYXFk7GS1haahWLE2" />
@@ -117,7 +118,10 @@
       <updated>1604163930079</updated>
       <workItem from="1604163931565" duration="27389000" />
       <workItem from="1604395778951" duration="13776000" />
-      <workItem from="1605556159608" duration="43582000" />
+      <workItem from="1605556159608" duration="50467000" />
+      <workItem from="1605872758199" duration="633000" />
+      <workItem from="1606663518052" duration="660000" />
+      <workItem from="1607463287921" duration="168000" />
     </task>
     <servers />
   </component>
@@ -145,11 +149,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605650748679" />
-    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605650204408">
+    <state x="2581" y="243" key="NewPhpClassDialog" timestamp="1605717293315">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604508177645" />
-    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605650204408" />
+    <state x="2581" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605717293315" />
     <state x="2714" y="443" key="NewPhpFileDialog" timestamp="1605644156283">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
