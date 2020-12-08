@@ -23,14 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f989610-a3f2-4799-ad13-bcc3881b8e6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/befinanced.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/befinanced.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/DataStructuresModule/ParamsBag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/src/ChristianFramework/HttpModule/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/utils/utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/pages/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/pages/auth.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,7 @@
       <workItem from="1605556159608" duration="50467000" />
       <workItem from="1605872758199" duration="633000" />
       <workItem from="1606663518052" duration="660000" />
-      <workItem from="1607463287921" duration="168000" />
+      <workItem from="1607463287921" duration="1291000" />
     </task>
     <servers />
   </component>
@@ -141,10 +139,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1605706925052">
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1607464407176">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1605706925052" />
+    <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607464407176" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605650748679">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

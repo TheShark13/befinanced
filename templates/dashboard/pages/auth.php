@@ -45,6 +45,7 @@
             <input type="checkbox" value="remember-me"> Tine-ma minte pentru 14 zile
         </label>
     </div>
+    <input type="hidden" value="<?=getCsrfToken()?>" name="token" />
     <button class="btn btn-lg btn-primary btn-block" type="submit">Autentificare</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 </form>

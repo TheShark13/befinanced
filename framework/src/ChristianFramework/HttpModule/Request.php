@@ -58,6 +58,13 @@ class Request
     protected ParamsBag $headers;
 
     /**
+     * Session (from $_SESSION)
+     *
+     * @var ParamsBag
+     */
+    protected ParamsBag $session;
+
+    /**
      * @var mixed|null
      */
     protected $content;
@@ -70,6 +77,7 @@ class Request
      * @param array $cookies
      * @param array $files
      * @param array $server
+     * @param array $session
      * @param mixed $content
      */
     public function __construct(
@@ -79,8 +87,10 @@ class Request
         array $cookies = [],
         array $files = [],
         array $server = [],
+        array $session = [],
         $content = null
-    ) {
+    )
+    {
         $this->queryParams = new ParamsBag($query);
         $this->requestParams = new ParamsBag($request);
         $this->attributes = new ParamsBag($attributes);
@@ -88,6 +98,7 @@ class Request
         $this->filesParams = new ParamsBag($files);
         $this->serverParams = new ServerBag($server);
         $this->headers = new ParamsBag($this->serverParams->getHeaders());
+        $this->session = new ParamsBag($session);
         $this->content = $content;
     }
 
@@ -98,7 +109,7 @@ class Request
      */
     public static function createFromGlobals()
     {
-        return self::createRequestFromFactory($_GET, $_REQUEST, $_POST, $_COOKIE, $_FILES, $_SERVER);
+        return self::createRequestFromFactory($_GET, $_REQUEST, $_POST, $_COOKIE, $_FILES, $_SERVER, $_SESSION);
     }
 
     /**
@@ -176,6 +187,24 @@ class Request
     }
 
     /**
+     * @return ParamsBag
+     */
+    public function getSession(): ParamsBag
+    {
+        return $this->session;
+    }
+
+    /**
+     * @param ParamsBag $session
+     * @return Request
+     */
+    public function setSession(ParamsBag $session): Request
+    {
+        $this->session = $session;
+        return $this;
+    }
+
+    /**
      * Get a value from request
      *
      * @param string $key
@@ -193,6 +222,7 @@ class Request
      * @param array $cookies
      * @param array $files
      * @param array $server
+     * @param array $session
      * @return static
      */
     protected static function createRequestFromFactory(
@@ -201,8 +231,10 @@ class Request
         array $attributes = [],
         array $cookies = [],
         array $files = [],
-        array $server = []
-    ): self {
-        return new static($query, $request, $attributes, $cookies, $files, $server);
+        array $server = [],
+        array $session = []
+    ): self
+    {
+        return new static($query, $request, $attributes, $cookies, $files, $server, $session);
     }
 }

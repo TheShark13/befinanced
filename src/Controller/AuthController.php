@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Repository\UserRepository;
 use App\Service\AuthService;
 use ChristianFramework\Controller\AbstractController;
+use ChristianFramework\HttpModule\Exception\NotFoundException;
 use ChristianFramework\HttpModule\Request;
 use ChristianFramework\HttpModule\Response;
 
@@ -20,17 +21,23 @@ class AuthController extends AbstractController
     {
         if ("POST" === $request->getServerParams()->get('REQUEST_METHOD')) {
             $errors = [];
-            if (!$request->get('email') || !$request->get('password')) {
-                $errors = [
-                    'email' => "Email necompletat",
-                    'password' => "Parola necompletata"
-                ];
-            } else {
-                $authService = new AuthService();
-                try {
-                    $authService->login($request->get('email'), $request->get('password'));
-                } catch (\Exception $e) {
-                    $errors['general'] = $e->getMessage();
+            if ($request->getSession()->get('token') !== $request->get('token')) {
+                $errors = ['general' => 'Cerere invalida'];
+            }
+
+            if(empty($errors)) {
+                if (!$request->get('email') || !$request->get('password')) {
+                    $errors = [
+                        'email' => "Email necompletat",
+                        'password' => "Parola necompletata"
+                    ];
+                } else {
+                    $authService = new AuthService();
+                    try {
+                        $authService->login($request->get('email'), $request->get('password'));
+                    } catch (\Exception $e) {
+                        $errors['general'] = $e->getMessage();
+                    }
                 }
             }
 
@@ -44,7 +51,8 @@ class AuthController extends AbstractController
         return $this->runTemplate("dashboard/pages/auth.php");
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         unset($_SESSION["user"]);
         header("Location: /");
     }

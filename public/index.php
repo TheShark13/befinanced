@@ -11,11 +11,13 @@ foreach (file(dirname(__DIR__) . '/.env') as $line) {
     $_ENV[$envVar[0]] = $envVar[1];
 }
 session_start();
+if(!isset($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(uniqid());
+}
 if (!isset($_SESSION['user']) && stripos($_SERVER['REQUEST_URI'], 'dashboard')) {
     header('Location: /login');
     die();
 }
-
 
 $request = Request::createFromGlobals();
 
