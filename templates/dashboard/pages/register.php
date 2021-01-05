@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Signin Template · Bootstrap</title>
+    <title>Obtine creditul tau acum</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -18,9 +18,9 @@
     <link href="<?= $getFileSrc("dashboard/css/auth.css") ?>" rel="stylesheet">
 </head>
 <body class="text-center">
-<form class="form-signin" action="/login" method="POST">
+<form class="form-signin" action="/register" method="POST">
     <img class="mb-4" src="<?= $getFileSrc("img/logo-black.png") ?>" alt="">
-    <h1 class="h3 mb-3 font-weight-normal">Autentificare</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Inregistrare</h1>
     <?php if (isset($errors['general'])) { ?>
         <div class="alert alert-danger" role="alert">
             <?= $errors['general'] ?>
@@ -33,6 +33,7 @@
             <?= $errors['email'] ?>
         </div>
     <?php } ?>
+    <br />
     <label for="password" class="sr-only">Password</label>
     <input type="password" id="password" name="password" class="form-control" placeholder="Parola" required>
     <?php if (isset($errors['password'])) { ?>
@@ -40,14 +41,10 @@
             <?= $errors['password'] ?>
         </div>
     <?php } ?>
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Tine-ma minte pentru 14 zile
-        </label>
-    </div>
+    <label for="confirm_password" class="sr-only">Confirma parola</label>
+    <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirma parola" required>
     <input type="hidden" value="<?=getCsrfToken()?>" name="token" />
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Autentificare</button>
-    <a class="btn btn-lg btn-light btn-block" style="border-color: #fff; background-color: #fff" href="/register">Vreau sa obtin un credit</a>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Creeaza contul</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 </form>
 </body>

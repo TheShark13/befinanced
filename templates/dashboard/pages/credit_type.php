@@ -11,6 +11,15 @@ use App\Entity\FinancialInstitution;
 </div>
 <div class="row">
     <div class="col-md-12">
+        <?php
+
+        if (isset($errors) && !empty($errors)) {
+            foreach ($errors as $error) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <?= $error ?>
+                </div>
+            <?php }
+        } ?>
         <form method="post" action="/dashboard/register-application">
             <div class="row">
                 <div class="form-group col-md-4">
@@ -39,8 +48,8 @@ use App\Entity\FinancialInstitution;
                                            value="<?= $financialInstitution->getId() ?>">
                                     <label class="form-check-label"
                                            for="exampleCheck1">
-                                        <img src="<?=$financialInstitution->getLogo()?>"
-                                           height="150px"  />
+                                        <img src="<?= $financialInstitution->getLogo() ?>"
+                                             height="150px"/>
                                         <b><?= $financialInstitution->getName() ?></b>
                                     </label>
                                 </div>

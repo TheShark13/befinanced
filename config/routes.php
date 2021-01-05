@@ -54,10 +54,28 @@ $routes = [
         'function' => "logout"
     ],
     [
+        'path' => '/register',
+        'controller' => AuthController::class,
+        'method' => ["GET", "POST"],
+        'function' => "register"
+    ],
+    [
+        'path' => '/confirm',
+        'controller' => AuthController::class,
+        'method' => ["GET"],
+        'function' => "confirm"
+    ],
+    [
         'path' => '/dashboard/apply-credit',
         'controller' => DashboardController::class,
         'method' => ["GET"],
         'function' => "applyCredit"
+    ],
+    [
+        'path' => '/dashboard/edit-profile',
+        'controller' => DashboardController::class,
+        'method' => ["GET", "POST"],
+        'function' => "editProfile"
     ],
     [
         'path' => '/dashboard/register-application',

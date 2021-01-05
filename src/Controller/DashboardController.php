@@ -97,6 +97,54 @@ class DashboardController extends AbstractController
         ]);
     }
 
+    public function editProfile(Request $request): Response
+    {
+        $userRepo = new UserRepository();
+        $user = $userRepo->findUserById($_SESSION['user']->getId());
+
+        if ("POST" === $request->getServerParams()->get('REQUEST_METHOD')) {
+            if ($request->get('password') && strlen($request->get('password'))) {
+                $user->setPassword($user->hashPassword($request->get('password')));
+            }
+            if ($request->get('email') && strlen($request->get('email'))) {
+                $user->setEmail($request->get('email'));
+            }
+            if ($request->get('role') && strlen($request->get('role'))) {
+                $role = $userRepo->findRoleById($request->get('role'));
+                $user->setRole($role);
+            }
+            if (!$user->getUserProfile()) {
+                $user->setUserProfile(new UserProfile());
+                $user->getUserProfile()->setCreated(new \DateTime());
+                $user->getUserProfile()->setUpdated(new \DateTime());
+            }
+            if ($request->get('first_name') && strlen($request->get('first_name'))) {
+                $user->getUserProfile()->setFirstName($request->get('first_name'));
+            }
+            if ($request->get('last_name') && strlen($request->get('last_name'))) {
+                $user->getUserProfile()->setLastName($request->get('last_name'));
+            }
+            if ($request->get('phone') && strlen($request->get('phone'))) {
+                $user->getUserProfile()->setPhoneNumber($request->get('phone'));
+            }
+            if ($request->get('nin') && strlen($request->get('nin'))) {
+                $user->getUserProfile()->setNin($request->get('nin'));
+            }
+            if ($user->getId()) {
+                $userRepo->update($user);
+            }
+
+            $_SESSION['user'] = $user;
+            header("Location: /dashboard");
+            die;
+        }
+
+        return $this->runTemplate("dashboard/pages/edit_profile.php", [
+            'user' => $user,
+            'userRoles' => $userRepo->findAllRoles()
+        ]);
+    }
+
     public function deleteUser(Request $request): Response
     {
         $usersRepo = new UserRepository();
@@ -118,8 +166,16 @@ class DashboardController extends AbstractController
 
     public function applications(Request $request): Response
     {
+        if (!$_SESSION['user']->hasRoleByName("VENDOR") && !$_SESSION['user']->hasRoleByName("CLIENT")) {
+            throw new RouteNotFoundException();
+        }
+
         $creditApplicationRepo = new CreditApplicationRepository();
-        $applications = $creditApplicationRepo->findApplicationsForUser($_SESSION['user']->getId());
+        if ($_SESSION['user']->hasRoleByName("VENDOR")) {
+            $applications = $creditApplicationRepo->findApplicationsForFinancialInstitution($_SESSION['user']->getFinancialInstitution()->getId());
+        } else if ($_SESSION['user']->hasRoleByName("CLIENT")) {
+            $applications = $creditApplicationRepo->findApplicationsForUser($_SESSION['user']->getId());
+        }
         return $this->runTemplate("dashboard/pages/applications.php", [
             'applications' => $applications
         ]);
@@ -138,6 +194,10 @@ class DashboardController extends AbstractController
             throw new RouteNotFoundException();
         }
 
+        if ($application->getApplicant()->getId() !== $_SESSION['user']->getId()) {
+            throw new RouteNotFoundException();
+        }
+
         $financialInstitutionRepo = new FinancialInstitutionRepository();
         $financialInstitutions = $financialInstitutionRepo->findFinancialInstitutionsForApplication($application->getId());
 
@@ -149,6 +209,14 @@ class DashboardController extends AbstractController
 
     public function applyCredit(Request $request): Response
     {
+        if (!$_SESSION['user']->getUserProfile()) {
+            header("Location: /dashboard/edit-profile");
+            die;
+        }
+        if ($_SESSION['user']->hasRoleByName("VENDOR")) {
+            throw new RouteNotFoundException();
+        }
+
         $creditTypesRepo = new CreditTypeRepository();
         $financialInstitutionRepo = new FinancialInstitutionRepository();
 
@@ -160,35 +228,53 @@ class DashboardController extends AbstractController
 
     public function registerApplication(Request $request): Response
     {
+        if (!$_SESSION['user']->getUserProfile()) {
+            header("Location: /dashboard/edit-profile");
+            die;
+        }
+        if ($_SESSION['user']->hasRoleByName("VENDOR")) {
+            throw new RouteNotFoundException();
+        }
+
         $creditTypesRepo = new CreditTypeRepository();
         $financialInstitutionRepo = new FinancialInstitutionRepository();
 
         $creditType = $creditTypesRepo->findOne(intval($request->get('credit_type')));
+        $errors = [];
         if (!$creditType) {
-            echo "Tip credit invalid";
-            die;
+            $errors[] = "Tip credit invalid";
         }
         if (!$request->get('sum') || !$request->get('reimbursement_period') || !$request->get('message')) {
-            echo "Campuri invalide";
-            die;
+            $errors[] = "Campuri invalide";
+        }
+        if (abs(floor(intval($request->get('sum')))) != $request->get('sum') || abs(floor(intval($request->get('reimbursement_period')))) != $request->get('reimbursement_period')) {
+            $errors[] = "Numere invalide";
         }
         if (!$request->get('financial_institutions')) {
-            echo "Nu ai selectat minim 1 institutie financiara";
+            $errors[] = "Nu ai selectat minim 1 institutie financiara";
+        }
+
+        if (!empty($errors)) {
+            return $this->runTemplate("dashboard/pages/credit_type.php", [
+                'creditTypes' => $creditTypesRepo->findAll(),
+                'financialInstitutions' => $financialInstitutionRepo->findAll(),
+                'errors' => $errors
+            ]);
+        } else {
+            $data = [
+                'user' => $_SESSION['user'],
+                'credit_type' => $creditType,
+                'sum' => $request->get('sum'),
+                'reimbursement_period' => $request->get('reimbursement_period'),
+                'message' => $request->get('message'),
+                'financial_institutions' => $request->get('financial_institutions')
+            ];
+            $creditApplicationService = new CreditApplicationService();
+            $creditApplicationService->createNewApplication($data);
+
+            header("Location: /dashboard/applications");
             die;
         }
-        $data = [
-            'user' => $_SESSION['user'],
-            'credit_type' => $creditType,
-            'sum' => $request->get('sum'),
-            'reimbursement_period' => $request->get('reimbursement_period'),
-            'message' => $request->get('message'),
-            'financial_institutions' => $request->get('financial_institutions')
-        ];
-        $creditApplicationService = new CreditApplicationService();
-        $creditApplicationService->createNewApplication($data);
-
-        header("Location: /dashboard/applications");
-        die;
     }
 
     public function pdfApplications(Request $request)

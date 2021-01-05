@@ -49,8 +49,8 @@ class MailerService
         $this->mailer->isSMTP();                                            // Send using SMTP
         $this->mailer->Host = 'mail.cristianionescu.ro';                    // Set the SMTP server to send through
         $this->mailer->SMTPAuth = true;                                   // Enable SMTP authentication
-        $this->mailer->Username = "contact@cristianionescu.ro";                     // SMTP username
-        $this->mailer->Password = 'Rechinushark45';                               // SMTP password
+        $this->mailer->Username = "befinanced@cristianionescu.ro";                     // SMTP username
+        $this->mailer->Password = '!%Sp[f3FQKV%';                               // SMTP password
         $this->mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
         $this->mailer->Port = 26;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
     }

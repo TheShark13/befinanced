@@ -23,7 +23,6 @@ use App\Entity\FinancialInstitution;
                                     institutii financiare</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                     </div>
@@ -35,7 +34,6 @@ use App\Entity\FinancialInstitution;
                                     RON</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +45,6 @@ use App\Entity\FinancialInstitution;
                                     luni</h5>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                     </div>
@@ -72,7 +69,7 @@ use App\Entity\FinancialInstitution;
                                          height="150px"  />
                                 </div>
                                 <div class="col-md-12">
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <a href="#" class="btn btn-primary">In asteptarea raspunsului</a>
 
                                 </div>
                             </div>

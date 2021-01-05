@@ -20,6 +20,11 @@ class User extends BaseEntity implements UserModel
     protected string $password;
 
     /**
+     * @var FinancialInstitution|null
+     */
+    protected ?FinancialInstitution $financialInstitution = null;
+
+    /**
      * @var UserRole
      */
     protected UserRole $role;
@@ -28,6 +33,16 @@ class User extends BaseEntity implements UserModel
      * @var UserProfile|null
      */
     protected ?UserProfile $userProfile = null;
+
+    /**
+     * @var string|null
+     */
+    protected ?string $confirmationToken = null;
+
+    /**
+     * @var bool
+     */
+    protected bool $enabled = false;
 
     /**
      * @inheritDoc
@@ -100,6 +115,19 @@ class User extends BaseEntity implements UserModel
     }
 
     /**
+     * @param string $roleName
+     * @return bool
+     */
+    public function hasRoleByName(string $roleName): bool
+    {
+        if ($this->role && $this->role->getName() === $roleName) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * @return UserProfile|null
      */
     public function getUserProfile(): ?UserProfile
@@ -117,5 +145,57 @@ class User extends BaseEntity implements UserModel
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getConfirmationToken(): ?string
+    {
+        return $this->confirmationToken;
+    }
 
+    /**
+     * @param string|null $confirmationToken
+     * @return User
+     */
+    public function setConfirmationToken(?string $confirmationToken): User
+    {
+        $this->confirmationToken = $confirmationToken;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEnabled(): bool
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * @param bool $enabled
+     * @return User
+     */
+    public function setEnabled(bool $enabled): User
+    {
+        $this->enabled = $enabled;
+        return $this;
+    }
+
+    /**
+     * @return FinancialInstitution|null
+     */
+    public function getFinancialInstitution(): ?FinancialInstitution
+    {
+        return $this->financialInstitution;
+    }
+
+    /**
+     * @param FinancialInstitution|null $financialInstitution
+     * @return User
+     */
+    public function setFinancialInstitution(?FinancialInstitution $financialInstitution): User
+    {
+        $this->financialInstitution = $financialInstitution;
+        return $this;
+    }
 }
